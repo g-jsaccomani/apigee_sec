@@ -1,0 +1,31 @@
+openapi: "3.0.3"
+info:
+  title: "Shadow Diagnostic Service API"
+  description: "An uncataloged, unsecured shadow service without authentication schemes or metadata."
+  version: "0.1.0"
+servers:
+  - url: "https://shadow.example.com/api"
+paths:
+  /debug/status:
+    get:
+      summary: "Unauthenticated diagnostic status endpoint"
+      operationId: "getDebugStatus"
+      responses:
+        "200":
+          description: "Service status returned"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "RUNNING"
+  /debug/reset:
+    post:
+      summary: "Reset service state without authentication"
+      operationId: "postDebugReset"
+      security: []
+      responses:
+        "200":
+          description: "State reset successfully"
