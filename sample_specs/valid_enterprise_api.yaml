@@ -1,0 +1,98 @@
+openapi: "3.0.3"
+info:
+  title: "Enterprise Payments Gateway API"
+  description: "Declarative enterprise payment processing and transaction auditing service."
+  version: "1.0.0"
+  x-api-hub-category: "Financial Services"
+  contact:
+    name: "Enterprise DevSecOps Team"
+    email: "devsecops@example.com"
+tags:
+  - name: "Payments"
+    description: "Payment processing operations"
+servers:
+  - url: "https://api.example.com/v1"
+    description: "Production Gateway Server"
+paths:
+  /payments:
+    post:
+      summary: "Create payment transaction"
+      operationId: "createPayment"
+      tags:
+        - "Payments"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - amount
+                - currency
+              properties:
+                amount:
+                  type: number
+                  format: double
+                  example: 100.00
+                currency:
+                  type: string
+                  example: "USD"
+      responses:
+        "201":
+          description: "Payment created successfully"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transactionId:
+                    type: string
+                    example: "tx_123456"
+                  status:
+                    type: string
+                    example: "SUCCESS"
+        "400":
+          description: "Invalid request payload"
+        "401":
+          description: "Unauthorized - Invalid token"
+  /payments/{id}:
+    get:
+      summary: "Get payment transaction by ID"
+      operationId: "getPayment"
+      tags:
+        - "Payments"
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Payment details retrieved"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transactionId:
+                    type: string
+                  status:
+                    type: string
+        "404":
+          description: "Payment not found"
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: "OAuth 2.0 authentication via enterprise identity provider"
+      flows:
+        clientCredentials:
+          tokenUrl: "https://auth.example.com/oauth/token"
+          scopes:
+            "payments:write": "Create payments"
+            "payments:read": "Read payments"
+security:
+  - OAuth2:
+      - "payments:write"
+      - "payments:read"
