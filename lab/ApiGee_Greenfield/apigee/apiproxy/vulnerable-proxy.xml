@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="vulnerable-proxy">
+    <Basepaths>/vulnerable</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1690000000000</CreatedAt>
+    <Description>Proxy with intentional security vulnerabilities</Description>
+    <DisplayName>Vulnerable Proxy</DisplayName>
+    <Policies>
+        <Policy>Inject-Admin-Token</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
