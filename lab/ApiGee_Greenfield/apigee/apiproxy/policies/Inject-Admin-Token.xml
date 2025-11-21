@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Inject-Admin-Token">
+    <DisplayName>Inject Admin Token</DisplayName>
+    <Properties/>
+    <!-- 
+      VULNERABILITY: This policy injects a hardcoded admin token into the HTTP Response headers, 
+      exposing it to the client.
+    -->
+    <Add>
+        <Headers>
+            <Header name="X-Admin-Token">supersecret123</Header>
+        </Headers>
+    </Add>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>
