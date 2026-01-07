@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <FaultRules/><!-- NO FAULT RULES CONFIGURED TO MASK ERRORS -->
+    <PreFlow name="PreFlow"/>
+    <PostFlow name="PostFlow">
+        <Response><Step><Name>Inject-Admin-Token</Name></Step></Response>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/verbose</BasePath>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default"><TargetEndpoint>default</TargetEndpoint></RouteRule>
+</ProxyEndpoint>
