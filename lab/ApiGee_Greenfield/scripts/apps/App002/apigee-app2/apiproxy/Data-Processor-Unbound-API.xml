@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="Data-Processor-Unbound-API">
+    <Basepaths>/data-processor</Basepaths>
+    <Description>API Vulnerable to DoS - No Quota/SpikeArrest</Description>
+    <Policies/>
+    <ProxyEndpoints><ProxyEndpoint>default</ProxyEndpoint></ProxyEndpoints>
+    <TargetEndpoints><TargetEndpoint>default</TargetEndpoint></TargetEndpoints>
+</APIProxy>
