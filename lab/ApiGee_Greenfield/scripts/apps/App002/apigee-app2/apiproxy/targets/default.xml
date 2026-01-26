@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+    <HTTPTargetConnection><URL>https://data-processor-api-jp52s65c4q-uc.a.run.app</URL></HTTPTargetConnection>
+</TargetEndpoint>
