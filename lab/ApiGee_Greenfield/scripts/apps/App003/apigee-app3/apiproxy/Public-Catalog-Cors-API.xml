@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="Public-Catalog-Cors-API">
+    <Basepaths>/catalog</Basepaths>
+    <Description>API with extremely permissive CORS</Description>
+    <Policies><Policy>CORS-Vulnerable</Policy></Policies>
+    <ProxyEndpoints><ProxyEndpoint>default</ProxyEndpoint></ProxyEndpoints>
+    <TargetEndpoints><TargetEndpoint>default</TargetEndpoint></TargetEndpoints>
+</APIProxy>
