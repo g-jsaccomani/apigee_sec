@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+    <HTTPTargetConnection><URL>http://10.10.0.2:8080</URL></HTTPTargetConnection>
+</TargetEndpoint>
