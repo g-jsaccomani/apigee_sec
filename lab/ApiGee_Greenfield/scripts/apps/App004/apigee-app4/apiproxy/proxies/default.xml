@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <!-- NO JSONThreatProtection POLICY HERE -->
+    <PreFlow name="PreFlow"/>
+    <HTTPProxyConnection>
+        <BasePath>/bulk-ingestion</BasePath>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default"><TargetEndpoint>default</TargetEndpoint></RouteRule>
+</ProxyEndpoint>
