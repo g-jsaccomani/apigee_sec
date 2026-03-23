@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="LegacyApp">
+    <Basepaths>/legacy</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1690000000000</CreatedAt>
+    <Description>Legacy Unprotected API</Description>
+    <DisplayName>LegacyApp</DisplayName>
+    <Policies/>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
