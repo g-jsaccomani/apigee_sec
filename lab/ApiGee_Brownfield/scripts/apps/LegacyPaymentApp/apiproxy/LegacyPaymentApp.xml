@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="LegacyPaymentApp">
+    <Basepaths>/legacy/payment</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1625097600000</CreatedAt>
+    <Description>Vulnerable Legacy App for Brownfield (LegacyPaymentApp)</Description>
+    <DisplayName>LegacyPaymentApp</DisplayName>
+    <LastModifiedAt>1625097600000</LastModifiedAt>
+    <Policies/>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
