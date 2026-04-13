@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="1" name="security-flows-v1">
+    <Description>Standardized WAP/WAAP security policies shared flow bundle for Risk Assessment v2 and API protection</Description>
+    <DisplayName>security-flows-v1</DisplayName>
+    <CreatedAt>1690000000000</CreatedAt>
+    <LastModifiedAt>1690000000000</LastModifiedAt>
+    <Policies>
+        <Policy>AM-PreserveXFFHeader</Policy>
+        <Policy>SA-SpikeArrest</Policy>
+        <Policy>TP-JSONThreatProtection</Policy>
+        <Policy>TP-XMLThreatProtection</Policy>
+        <Policy>VA-VerifyAPIKey</Policy>
+        <Policy>OA-VerifyOAuthV2AccessToken</Policy>
+    </Policies>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>
