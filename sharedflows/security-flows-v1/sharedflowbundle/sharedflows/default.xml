@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <!--
+      Standardized Security Shared Flow Execution Pipeline
+      Ready for up to 5 levels of nested Flow Hooks (e.g., Organization, Environment, API Proxy Pre-Proxy,
+      Pre-Target, and Fault Flow Hooks).
+      
+      Execution sequence:
+      1. AM-PreserveXFFHeader: Preserves client IP X-Forwarded-For header so Vertex AI ML posture engines prevent client IPs from resolving as (not set).
+      2. SA-SpikeArrest: Volumetric rate limiting policy to shed DDoS spikes and traffic surges.
+      3. TP-JSONThreatProtection: JSONThreatProtection policy enforcing container depth and element limits.
+      4. TP-XMLThreatProtection: XMLThreatProtection policy against XML bombs and XXE.
+      5. VA-VerifyAPIKey: VerifyAPIKey policy when API key is provided in header or query parameter.
+      6. OA-VerifyOAuthV2AccessToken: VerifyOAuthV2AccessToken policy when Bearer token is provided in Authorization header.
+    -->
+    <Step>
+        <Name>AM-PreserveXFFHeader</Name>
+    </Step>
+    <Step>
+        <Name>SA-SpikeArrest</Name>
+    </Step>
+    <Step>
+        <Condition>(request.verb = "POST" or request.verb = "PUT" or request.verb = "PATCH") and (request.header.Content-Type ~~ ".*application/json.*")</Condition>
+        <Name>TP-JSONThreatProtection</Name>
+    </Step>
+    <Step>
+        <Condition>(request.verb = "POST" or request.verb = "PUT" or request.verb = "PATCH") and (request.header.Content-Type ~~ ".*(application/xml|text/xml).*")</Condition>
+        <Name>TP-XMLThreatProtection</Name>
+    </Step>
+    <Step>
+        <Condition>(request.header.x-api-key != null) or (request.queryparam.apikey != null)</Condition>
+        <Name>VA-VerifyAPIKey</Name>
+    </Step>
+    <Step>
+        <Condition>(request.header.Authorization ~~ "^Bearer .*")</Condition>
+        <Name>OA-VerifyOAuthV2AccessToken</Name>
+    </Step>
+</SharedFlow>
