@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyAPIKey async="false" continueOnError="false" enabled="true" name="VA-VerifyAPIKey">
+    <DisplayName>VA-VerifyAPIKey</DisplayName>
+    <Description>Verifies the API key presented in the X-API-Key header or query parameter</Description>
+    <APIKey ref="request.header.x-api-key"/>
+</VerifyAPIKey>
