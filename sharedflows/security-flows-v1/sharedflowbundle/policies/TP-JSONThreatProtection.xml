@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JSONThreatProtection async="false" continueOnError="false" enabled="true" name="TP-JSONThreatProtection">
+    <DisplayName>TP-JSONThreatProtection</DisplayName>
+    <Description>Protects against JSON parser denial-of-service and payload attacks by enforcing container depth and element limits</Description>
+    <ArrayElementCount>100</ArrayElementCount>
+    <ContainerDepth>10</ContainerDepth>
+    <ObjectEntryCount>100</ObjectEntryCount>
+    <ObjectEntryNameLength>256</ObjectEntryNameLength>
+    <Source>request</Source>
+    <StringValueLength>4096</StringValueLength>
+</JSONThreatProtection>
