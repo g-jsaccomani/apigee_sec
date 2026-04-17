@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="OA-VerifyOAuthV2AccessToken">
+    <DisplayName>OA-VerifyOAuthV2AccessToken</DisplayName>
+    <Description>Verifies OAuth 2.0 access token presented in Authorization header</Description>
+    <Operation>VerifyAccessToken</Operation>
+    <AccessTokenPrefix>Bearer</AccessTokenPrefix>
+</OAuthV2>
