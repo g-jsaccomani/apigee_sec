@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SpikeArrest async="false" continueOnError="false" enabled="true" name="SA-SpikeArrest">
+    <DisplayName>SA-SpikeArrest</DisplayName>
+    <Description>Volumetric rate limiting to mitigate DDoS spikes and traffic surges</Description>
+    <Rate>100ps</Rate>
+    <UseEffectiveCount>true</UseEffectiveCount>
+    <Identifier ref="client.ip"/>
+</SpikeArrest>
