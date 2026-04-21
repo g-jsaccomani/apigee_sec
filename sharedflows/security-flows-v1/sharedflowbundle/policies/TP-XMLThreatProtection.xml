@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XMLThreatProtection async="false" continueOnError="false" enabled="true" name="TP-XMLThreatProtection">
+    <DisplayName>TP-XMLThreatProtection</DisplayName>
+    <Description>Protects against XML bombs, recursive entity expansion, and XXE attacks by enforcing structure and element limits</Description>
+    <ElementCount>200</ElementCount>
+    <ElementDepth>15</ElementDepth>
+    <AttributeCountPerElement>10</AttributeCountPerElement>
+    <AttributeNameLength>256</AttributeNameLength>
+    <AttributeValueLength>4096</AttributeValueLength>
+    <TextNodeLength>4096</TextNodeLength>
+    <Source>request</Source>
+</XMLThreatProtection>
