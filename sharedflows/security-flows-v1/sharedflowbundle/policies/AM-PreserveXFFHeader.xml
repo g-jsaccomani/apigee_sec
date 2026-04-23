@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-PreserveXFFHeader">
+    <DisplayName>AM-PreserveXFFHeader</DisplayName>
+    <Description>Preserves client IP X-Forwarded-For header (does not strip or alter XFF so Vertex AI ML posture engines prevent client IPs from resolving as (not set))</Description>
+    <Set>
+        <Headers>
+            <Header name="X-Forwarded-For">{request.header.X-Forwarded-For}</Header>
+        </Headers>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
