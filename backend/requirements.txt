@@ -1,0 +1,11 @@
+# Core backend dependencies for API Security Posture Review (API-SPR)
+# Note: The application is designed to degrade gracefully to Python standard library
+# and dataclasses when running in minimal/local environments.
+
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+requests>=2.31.0
+httpx>=0.24.0
+google-auth>=2.20.0
+python-dotenv>=1.0.0
