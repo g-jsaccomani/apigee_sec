@@ -1,0 +1,61 @@
+{
+  "last_updated": "2026-08-08T00:24:35.625711Z",
+  "feed_version": "2026.08-LATEST",
+  "frameworks_tracked": [
+    "OWASP API Security Top 10 (2023)",
+    "OWASP Top 10 for LLM & GenAI (2025/2026)",
+    "NIST SP 800-207 Zero Trust Architecture",
+    "CIS Google Cloud Platform Foundations Benchmark v3.0"
+  ],
+  "active_waf_expressions": {
+    "crs_version": "v33-stable",
+    "paranoia_levels": {
+      "1": "High confidence, baseline protection, minimal false positives.",
+      "2": "Medium-high sensitivity, inspects additional headers and encoded payloads.",
+      "3": "High sensitivity, strict regex on payload structures.",
+      "4": "Maximum sensitivity, suitable for ultra-high security financial transactions."
+    },
+    "preconfigured_expressions": {
+      "sqli": "evaluatePreconfiguredExpr('sqli-v33-stable', 1)",
+      "xss": "evaluatePreconfiguredExpr('xss-v33-stable')",
+      "rce": "evaluatePreconfiguredExpr('rce-v33-stable')",
+      "lfi": "evaluatePreconfiguredExpr('lfi-v33-stable')",
+      "rfi": "evaluatePreconfiguredExpr('rfi-v33-stable')",
+      "method_enforcement": "evaluatePreconfiguredExpr('methodenforcement-v33-stable')",
+      "scanner_detection": "evaluatePreconfiguredExpr('scannerdetection-v33-stable')",
+      "protocol_attack": "evaluatePreconfiguredExpr('protocolattack-v33-stable')"
+    }
+  },
+  "emerging_threats": [
+    {
+      "cve_id": "CVE-2024-XXXX",
+      "component": "Envoy / Apigee Gateway Target Proxy",
+      "cvss_score": 8.5,
+      "severity": "HIGH",
+      "attack_type": "HTTP/2 Rapid Reset & Request Smuggling",
+      "remediation": "Apply Cloud Armor L7 Adaptive Protection and SpikeArrest (30ps) to mitigate frame floods."
+    },
+    {
+      "cve_id": "CWE-918",
+      "component": "TargetEndpoint Forwarding",
+      "cvss_score": 9.1,
+      "severity": "CRITICAL",
+      "attack_type": "Server-Side Request Forgery (SSRF)",
+      "remediation": "Impose target URL whitelisting in JavaScript policy and restrict outbound IP ranges in VPC Service Controls."
+    },
+    {
+      "cve_id": "CWE-862",
+      "component": "REST Resource URI Mapping",
+      "cvss_score": 8.8,
+      "severity": "HIGH",
+      "attack_type": "Broken Object Level Authorization (BOLA)",
+      "remediation": "Validate JWT subject claims (sub/user_id) against the URI path variable {user_id}."
+    }
+  ],
+  "defense_in_depth_guardrails": {
+    "flag_mode_monitor_hours": 72,
+    "ml_abuse_baseline_weeks": 12,
+    "error_sanitization_policy": "AssignMessage FaultRule",
+    "token_delegation_lifetime_seconds": 3600
+  }
+}
